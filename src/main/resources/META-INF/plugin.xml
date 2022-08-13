@@ -1,0 +1,24 @@
+<idea-plugin>
+    <id>com.boommanpro.type-idea-plugin</id>
+    <name>Typing IO</name>
+    <idea-version since-build="202.1"/>
+    <vendor email="boommanpro@gmail.com" url="https://www.boommanpro.cn">BoomManPro</vendor>
+
+    <description>like vscode plugins warm up plugins, help you practice typing.</description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <toolWindow factoryClass="com.boommanpro.typingparactice.factory.TypingIOWindowFactory" id="typing-io"
+                    anchor="right"/>
+    </extensions>
+
+    <actions>
+        <action id="Practice Code" class="com.boommanpro.typingparactice.TypingIO" text="TypingIO">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
