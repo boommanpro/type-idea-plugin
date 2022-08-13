@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speeddy</title>
+
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body Styling */
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        line-height: 2;
+        height: 100vh;
+        background-color: #32313a;
+      }
+
+      /* Header */
+      #header {
+        background-color: #53565c;
+        color: #fff;
+        text-align: center;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 15px;
+        padding: 0.25rem;
+      }
+
+      /* Main Body Of Game */
+      #main-body {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      #main-body .content {
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        line-height: 4rem;
+      }
+
+      #main-body .content > h2 {
+        font-size: 3rem;
+        font-weight: normal;
+      }
+
+      .text-color {
+        color: aqua;
+        font-weight: bold;
+      }
+
+      #main-body .content > input {
+        width: 350px;
+        height: 35px;
+        border-radius: 4px;
+        font-size: large;
+        margin-top: 1rem;
+        padding-left: 10px;
+      }
+
+      #main-body .content > h4 {
+        margin-bottom: 0.25rem;
+      }
+
+      /* Time and Score Countdown */
+      .countdown {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 1.25rem;
+        width: 300px;
+        margin-bottom: 1rem;
+      }
+
+      /* Instructions */
+      .instructions {
+        background-color: #53565c;
+        max-width: 350px;
+        border-radius: 4px;
+      }
+
+      .instruction > h4 {
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+
+  <!-- Page Title -->
+  <body>
+    <div id="header">
+      <h2>Speeddy</h2>
+    </div>
+
+    <!-- Main Body Of Game -->
+    <div id="main-body">
+      <div class="content">
+        <p>
+          Type The Given Word Within
+          <span class="text-color" id="seconds">5</span> Seconds
+        </p>
+        <h2 id="current-word">Joke</h2>
+        <input
+          type="text"
+          placeholder="Start typing..."
+          id="word-input"
+          autofocus
+        />
+        <h4 id="message"></h4>
+      </div>
+
+      <!-- Time and Score Countdown -->
+      <div class="countdown">
+        <p>Time Left: <span id="time">0</span></p>
+        <p>Score: <span id="score">0</span></p>
+      </div>
+
+      <!-- Instructions -->
+      <div class="instructions">
+        <h4>Instruction</h4>
+        <p>
+          Type each word in the given amount of seconds to score. To play again,
+          just type the current word. Your score will reset.
+        </p>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="/main.js"></script>
+  </body>
+</html>
