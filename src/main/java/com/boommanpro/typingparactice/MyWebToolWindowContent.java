@@ -29,7 +29,7 @@ public class MyWebToolWindowContent {
         // 将 JBCefBrowser 的UI控件设置到Panel中
         this.content.add(myBrowser.getComponent(), BorderLayout.CENTER);
         // 加载URL
-        myBrowser.loadURL("http://124.222.12.234/typing/index.html");
+        myBrowser.loadURL("https://boommanpro.github.io/type-idea-plugin/index.html");
 
         JBCefJSQuery.create(myBrowser);
         myCefBrowser = myBrowser.getCefBrowser();
