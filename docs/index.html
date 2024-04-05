@@ -1,143 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Speeddy</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-      /* Reset */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    <link href="style/style.css" rel="stylesheet">
 
-      /* Body Styling */
-      body {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        line-height: 2;
-        height: 100vh;
-        background-color: #32313a;
-      }
+    <title>Typing IO</title>
+</head>
+<body>
+<div id="top">
+    <h2 id="header">
+        Typing test
+    </h2>
+    <p id="subtitle" style="color: white">Practice Source Code Typing Page.</p>
+</div>
 
-      /* Header */
-      #header {
-        background-color: #53565c;
-        color: #fff;
-        text-align: center;
-        font-size: 1.25rem;
-        text-transform: uppercase;
-        letter-spacing: 15px;
-        padding: 0.25rem;
-      }
-
-      /* Main Body Of Game */
-      #main-body {
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      #main-body .content {
-        display: flex;
-        justify-self: center;
-        align-items: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-        line-height: 4rem;
-      }
-
-      #main-body .content > h2 {
-        font-size: 3rem;
-        font-weight: normal;
-      }
-
-      .text-color {
-        color: aqua;
-        font-weight: bold;
-      }
-
-      #main-body .content > input {
-        width: 350px;
-        height: 35px;
-        border-radius: 4px;
-        font-size: large;
-        margin-top: 1rem;
-        padding-left: 10px;
-      }
-
-      #main-body .content > h4 {
-        margin-bottom: 0.25rem;
-      }
-
-      /* Time and Score Countdown */
-      .countdown {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        padding: 1.25rem;
-        width: 300px;
-        margin-bottom: 1rem;
-      }
-
-      /* Instructions */
-      .instructions {
-        background-color: #53565c;
-        max-width: 350px;
-        border-radius: 4px;
-      }
-
-      .instruction > h4 {
-        font-size: 1.5rem;
-      }
-    </style>
-  </head>
-
-  <!-- Page Title -->
-  <body>
-    <div id="header">
-      <h2>Speeddy</h2>
+<div id="command-center">
+    <div class="bar">
+        <div id="left-wing">
+              <span id="word-count" style="display:none;">
+                <span id="wc-15">15</span>
+                <text> / </text>
+                <span id="wc-30">30</span>
+                <text> / </text>
+                <span id="wc-60">60</span>
+                <text> / </text> 
+                <span id="wc-120">120</span>
+                <text> / </text>
+                <span id="wc-240">240</span>
+              </span>
+            <span id="time-count" style="display:none;">
+                <span id="tc-15">15</span>
+                <text> / </text>
+                <span id="tc-30">30</span>
+                <text> / </text>
+                <span id="tc-60">60</span>
+                <text> / </text>
+                <span id="tc-120">120</span>
+                <text> / </text>
+                <span id="tc-240">240</span>
+              </span>
+            <span id="language-selected" style="display:none;">Language</span>
+        </div>
+        <div id="right-wing">WPM: XX / ACC: XX</div>
     </div>
-
-    <!-- Main Body Of Game -->
-    <div id="main-body">
-      <div class="content">
-        <p>
-          Type The Given Word Within
-          <span class="text-color" id="seconds">5</span> Seconds
-        </p>
-        <h2 id="current-word">Joke</h2>
-        <input
-          type="text"
-          placeholder="Start typing..."
-          id="word-input"
-          autofocus
-        />
-        <h4 id="message"></h4>
-      </div>
-
-      <!-- Time and Score Countdown -->
-      <div class="countdown">
-        <p>Time Left: <span id="time">0</span></p>
-        <p>Score: <span id="score">0</span></p>
-      </div>
-
-      <!-- Instructions -->
-      <div class="instructions">
-        <h4>Instruction</h4>
-        <p>
-          Type each word in the given amount of seconds to score. To play again,
-          just type the current word. Your score will reset.
-        </p>
-      </div>
+    <div id="typing-area" style="display:none;">
+        <div id="text-display"></div>
+        <div class="bar">
+            <input id="input-field" type="text" spellcheck="false" autocomplete="off" autocorrect="off"
+                   autocapitalize="off" tabindex="1"/>
+            <button id="restart-button" tabindex="2">restart</button>
+        </div>
     </div>
+    <div id="coding-area" tabindex="-1" style="display:none;">
+        <div class="code-display">
+            <div class="code">
+                <pre id="code-pre"><code id="code-code"></code></pre>
+                <span id="cursor" style="left: 0px; top: 0px" class="cursor">|</span>
+            </div>
+        </div>
+        <button id="restart-button" class=" codeButton" tabindex="2">restart</button>
+    </div>
+</div>
 
-    <!-- Javascript -->
-    <script src="/main.js"></script>
-  </body>
+<div></div>
+<script
+        src="modules/purify.min.js"
+></script>
+<script src="modules/prism.min.js" data-manual></script>
+<script src="modules/tinycolor.min.js"></script>
+<script src="main.js"></script>
+</body>
 </html>
